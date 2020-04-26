@@ -143,6 +143,7 @@ button {
 	overflow       : hidden;
 	margin-bottom  : 30px;
 	padding-bottom : 20px;
+	color          : #000;
 	border-radius  : 7px;
 	box-shadow     : 0px 4px 12px rgba(0, 0, 0, 0.05);
 	flex-basis     : 31%;
@@ -222,6 +223,9 @@ button {
 	font-size    : 18px;
 	color        : #595959;
 }
+.footer_link {
+	color : #595959;
+}
 .footer_link:not(:last-child) {
 	margin-right : 10px;
 }
@@ -284,12 +288,12 @@ button {
 .button_cart_menu_item {
 	display         : flex;
 	width           : 110px;
+	padding-left    : 7px;
 	background      : url(../img/shopping_cart_white.svg) no-repeat top 15px right 10px #1890FF;
 	font-size       : 16px;
 	color           : #fff;
 	border-radius   : 2px;
 	justify-content : space-between;
-	padding-left: 7px;
 }
 .button_cart_menu_item:hover {
 	cursor     : pointer;
@@ -453,7 +457,7 @@ button {
 		font-size : 30px;
 	}
 	.modal_footer_price {
-		font-size: 18px;
+		font-size : 18px;
 	}
 }
 @media (max-width: 900px) {
@@ -593,18 +597,18 @@ button {
 		justify-content : center;
 	}
 	.food_name {
-		font-size: 16px;
+		font-size : 16px;
 	}
 	.food_price {
-		font-size: 18px;
-		margin-right: auto;
+		margin-right : auto;
+		font-size    : 18px;
 	}
 	.caunter {
-		font-size: 18px;
+		font-size : 18px;
 	}
 	.modal_footer_price {
-		font-size: 16px;
-		padding: 10px 5px;
+		padding   : 10px 5px;
+		font-size : 16px;
 	}
 }
 @media (max-width: 550px) {
@@ -615,7 +619,7 @@ button {
 		margin-left : 60px;
 	}
 	.food_row {
-		flex-wrap: wrap;
+		flex-wrap : wrap;
 	}
 }
 @media (max-width: 460px) {
@@ -670,49 +674,49 @@ button {
 		width : 110px;
 	}
 	.food_price {
-		order: 3;
-		margin-left: 15px;
-		margin-right: auto;
+		margin-right : auto;
+		margin-left  : 15px;
+		order        : 3;
 	}
 	.modal_footer {
-		flex-wrap: wrap;
+		flex-wrap : wrap;
 	}
 	.modal_footer_buttons {
-		margin-left: 10px;
+		margin-left : 10px;
 	}
 }
 @media (max-width: 440px) {
 	.modal_footer_price {
-		margin: 0 auto 10px auto;
+		margin : 0 auto 10px auto;
 	}
 	.modal_footer_buttons {
-		width: 100%;
-		display: flex;
-		justify-content: center;
+		display         : flex;
+		width           : 100%;
+		justify-content : center;
 	}
 }
 @media (max-width: 400px) {
 	.food_price {
-		order: 0;
-		margin-left: auto;
+		margin-left : auto;
+		order       : 0;
 	}
 	.food_caunter {
-		margin-top: 10px;
-		margin-right: auto;
-		margin-left: auto;
+		margin-top   : 10px;
+		margin-right : auto;
+		margin-left  : auto;
 	}
 	.modal_footer_buttons {
-		align-items: center;
-		flex-direction: column;
-		margin-left: auto;
-		margin-right: auto;
+		margin-right   : auto;
+		margin-left    : auto;
+		align-items    : center;
+		flex-direction : column;
 	}
 	.modal_dialog {
-		height: 98%;
-		overflow: auto;
+		overflow : auto;
+		height   : 98%;
 	}
 	.modal_button_close {
-		margin-left: 0;
-		margin-top: 10px;
+		margin-top  : 10px;
+		margin-left : 0;
 	}
 }
