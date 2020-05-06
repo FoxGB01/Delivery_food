@@ -1,0 +1,722 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto : wght@700&display=swap');
+* {
+	box-sizing : border-box;
+}
+body {
+	font-family : 'Roboto', sans-serif;
+}
+a {
+	text-decoration : none;
+}
+/*сброс стилей для кнопок понадобился, т.к. при нажатии происходило искажение кнопки*/
+button {
+	padding          : 0;
+	cursor           : pointer;
+	background-color : transparent;
+	font             : inherit;
+	color            : inherit;
+	border           : none;
+}
+.container {
+	max-width : 1200px;
+	margin    : auto;
+}
+.main {
+	background : linear-gradient(180deg, rgba(245, 245, 245, 0) 1.04%, #F5F5F5 100%);
+}
+.header {
+	display         : flex;
+	padding         : 40px 0;
+	justify-content : space-between;
+	align-items     : center;
+}
+.buttons {
+	display         : flex;
+	width           : 220px;
+	justify-content : space-between;
+}
+.button {
+	height      : 40px;
+	width       : 100px;
+	font-size   : 16px;
+	line-height : 40px;
+	border      : 1px solid #D9D9D9;
+}
+.button_login {
+	background          : url(../img/user.svg) #1890FF;
+	background-position : left 10px center;
+	background-repeat   : no-repeat;
+	color               : #fff;
+	border              : none;
+	border-radius       : 2px;
+}
+.button_login:hover {
+	cursor              : pointer;
+	background          : url(../img/user.svg) #1670dd;
+	background-position : left 10px center;
+	background-repeat   : no-repeat;
+}
+.button_cart {
+	width               : 110px;
+	background          : url(../img/shopping-cart.svg);
+	background-position : left 6px center;
+	background-repeat   : no-repeat;
+	color               : #595959;
+	border-radius       : 2px;
+}
+.button_cart:hover {
+	width               : 110px;
+	cursor              : pointer;
+	background          : url(../img/shopping-cart.svg) #ddd;
+	background-position : left 6px center;
+	background-repeat   : no-repeat;
+}
+.adress-input {
+	background : url(../img/home.svg);
+	flex       : 0.8;
+}
+.search-input {
+	background : url('../img/search.svg');
+	flex-basis : 30%;
+}
+.input {
+	display             : flex;
+	height              : 30px;
+	padding-left        : 35px;
+	background-position : left 7px center;
+	background-repeat   : no-repeat;
+	font-size           : 16px;
+	color               : #000;
+	line-height         : 24px;
+	border              : 1px solid #BFBFBF;
+	border-radius       : 2px;
+	align-items         : center;
+}
+.promo {
+	display       : flex;
+	top           : 15%;
+	height        : 40vh;
+	width         : 100%;
+	background    : #FFF1B8 url(../img/pizza.jpeg) no-repeat center right -300px / 700px;
+	border-radius : 5px;
+	box-shadow    : 0px 7px 12px rgba(158, 158, 163, 0.1);
+	align-items   : center;
+}
+.promo_text {
+	padding-left : 6%;
+	flex-basis   : 60%;
+}
+.promo_text_title {
+	margin-top    : 0;
+	margin-bottom : 10px;
+	font-size     : 39px;
+	line-height   : 46px;
+}
+.promo_text_description {
+	margin      : 0;
+	font-size   : 24px;
+	line-height : 28px;
+}
+.search_restaurant_wrap {
+	display         : flex;
+	height          : 100px;
+	justify-content : space-between;
+	align-items     : center;
+}
+.search_header_text {
+	margin      : 0;
+	font-size   : 36px;
+	font-weight : bold;
+	line-height : 42px;
+}
+.cards {
+	display         : flex;
+	flex-wrap       : wrap;
+	justify-content : space-between;
+	align-items     : flex-start;
+}
+.card:visited {
+	color : #000;
+}
+.card {
+	overflow       : hidden;
+	margin-bottom  : 30px;
+	padding-bottom : 20px;
+	color          : #000;
+	border-radius  : 7px;
+	box-shadow     : 0px 4px 12px rgba(0, 0, 0, 0.05);
+	flex-basis     : 31%;
+}
+.cards_image {
+	height     : 250px;
+	width      : 100%;
+	object-fit : cover;
+}
+.cards_text {
+	display        : flex;
+	width          : 100%;
+	padding        : 20px 0;
+	flex-direction : column;
+	align-items    : center;
+}
+.cards_heading {
+	display         : flex;
+	width           : 90%;
+	margin-bottom   : 10px;
+	justify-content : space-between;
+	align-items     : center;
+}
+.cards_title {
+	margin    : 0;
+	font-size : 24px;
+}
+.cards_tag {
+	padding       : 0 10px;
+	background    : #262626;
+	font-size     : 12px;
+	color         : #fff;
+	line-height   : 20px;
+	border-radius : 2px;
+}
+.cards_info {
+	display     : flex;
+	width       : 90%;
+	font-size   : 18px;
+	color       : #8C8C8C;
+	align-items : center;
+}
+.rating {
+	margin-right : 25px;
+	font-size    : 18px;
+	font-weight  : bold;
+	color        : #FFC107;
+}
+.rating:before {
+	content      : url(../img/Vector.svg);
+	margin-right : 10px;
+}
+.price {
+	margin-right : 10px;
+}
+.price:after {
+	content        : "";
+	display        : inline-block;
+	vertical-align : middle;
+	height         : 5px;
+	width          : 5px;
+	margin-left    : 10px;
+	background     : #8C8C8C;
+	border-radius  : 50%;
+}
+.footer_block {
+	display         : flex;
+	padding         : 60px 0;
+	align-items     : center;
+	justify-content : space-between;
+}
+.footer_logo {
+	margin-right : 30px;
+}
+.footer_nav {
+	margin-right : auto;
+	font-size    : 18px;
+	color        : #595959;
+}
+.footer_link {
+	color : #595959;
+}
+.footer_link:not(:last-child) {
+	margin-right : 10px;
+}
+.footer_link:visited {
+	color : #595959;
+}
+.footer_social_links {
+	display     : flex;
+	align-items : center;
+}
+.footer_social_link {
+	margin-right : 15px;
+}
+/*-------------menu_tanuki-------------*/
+.restaurant_info {
+	display     : flex;
+	height      : 100px;
+	align-items : center;
+	flex-wrap   : wrap;
+}
+.header_menu {
+	margin       : 0;
+	margin-right : 30px;
+	font-size    : 36px;
+	font-weight  : bold;
+}
+.restaurant_description {
+	display     : flex;
+	font-size   : 18px;
+	color       : #8C8C8C;
+	align-items : center;
+}
+.cards_text_menu_item {
+	display        : flex;
+	width          : 90%;
+	margin-right   : auto;
+	margin-left    : auto;
+	flex-direction : column;
+	align-items    : flex-start;
+}
+.cards_heading_menu_item {
+	display        : flex;
+	flex-direction : column;
+	align-items    : flex-start;
+}
+.name_menu_item {
+	font-size   : 24px;
+	font-weight : normal;
+}
+.menu_item_description {
+	font-size : 18px;
+	color     : #8C8C8C;
+}
+.menu_item_block {
+	display     : flex;
+	width       : 100%;
+	margin-top  : 25px;
+	align-items : center;
+}
+.button_cart_menu_item {
+	display         : flex;
+	width           : 110px;
+	padding-left    : 7px;
+	background      : url(../img/shopping_cart_white.svg) no-repeat top 15px right 10px #1890FF;
+	font-size       : 16px;
+	color           : #fff;
+	border-radius   : 2px;
+	justify-content : space-between;
+}
+.button_cart_menu_item:hover {
+	cursor     : pointer;
+	background : url(../img/shopping_cart_white.svg) no-repeat top 15px right 10px #1670dd;
+}
+.menu_item_price {
+	margin-left : 60px;
+	font-size   : 20px;
+	font-weight : bold;
+}
+.modal {
+	position        : fixed;
+	display         : none;
+	top             : 0;
+	left            : 0;
+	height          : 100%;
+	width           : 100%;
+	background      : rgba(0, 0, 0, 0.4);
+	justify-content : center;
+	align-items     : center;
+}
+.is_open {
+	display : flex;
+}
+.modal_dialog {
+	width         : 95%;
+	max-width     : 780px;
+	padding       : 40px 45px;
+	background    : #fff;
+	border-radius : 3px;
+}
+.modal_header {
+	display         : flex;
+	margin-bottom   : 45px;
+	justify-content : space-between;
+}
+.modal_title {
+	margin      : 0;
+	font-size   : 36px;
+	font-weight : bold;
+}
+.close {
+	background-color : transparent;
+	font-size        : 36px;
+	border           : none;
+}
+.food_row {
+	display         : flex;
+	margin-bottom   : 15px;
+	padding-bottom  : 10px;
+	border-bottom   : 1px solid #40A9FF;
+	align-items     : center;
+	justify-content : space-between;
+}
+.food_name {
+	font-size : 18px;
+}
+.food_price {
+	margin-right : 50px;
+	margin-left  : auto;
+	font-size    : 20px;
+	font-weight  : bold;
+}
+.food_caunter {
+	display     : flex;
+	align-items : center;
+}
+.caunter_button {
+	display         : flex;
+	height          : 32px;
+	width           : 39px;
+	background      : #FFFFFF;
+	font-size       : 14px;
+	color           : #40A9FF;
+	border          : 1px solid #40A9FF;
+	border-radius   : 2px;
+	align-items     : center;
+	justify-content : center;
+}
+.caunter {
+	margin-right : 18px;
+	margin-left  : 18px;
+	font-size    : 24px;
+}
+.modal_footer {
+	display         : flex;
+	margin-top      : 60px;
+	align-items     : center;
+	justify-content : space-between;
+}
+.modal_footer_price {
+	padding       : 10px 15px;
+	background    : #262626;
+	font-size     : 20px;
+	font-weight   : bold;
+	color         : #fff;
+	border-radius : 5px;
+}
+.modal_button {
+	padding    : 10px 15px;
+	background : #1890FF;
+	font-size  : 16px;
+	color      : #fff;
+	border     : none;
+}
+.modal_button_close {
+	margin-left : 10px;
+	background  : #fff;
+	color       : #595959;
+	border      : 1px solid #D9D9D9;
+}
+/*-------------MEDIA-------------*/
+@media (max-width: 1350px) {
+	.container {
+		max-width : 1000px;
+	}
+}
+@media (max-width: 1150px) {
+	.container {
+		max-width : 800px;
+	}
+	.promo_text_title {
+		font-size   : 30px;
+		line-height : 36px;
+	}
+	.promo_text_description {
+		font-size   : 20px;
+		line-height : 26px;
+	}
+	.search-input {
+		flex-basis : 50%;
+	}
+	.search_header_text {
+		font-size   : 30px;
+		line-height : 36px;
+	}
+	.cards_info {
+		flex-basis  : 90%;
+		flex-wrap   : wrap;
+		align-items : center;
+	}
+	.rating {
+		margin-top : 15px;
+		order      : 2;
+	}
+	.rating_menu {
+		margin       : 0;
+		margin-right : 15px;
+		order        : 0;
+	}
+	.cards_heading {
+		flex-wrap : wrap;
+	}
+	.cards_title {
+		flex-wrap : wrap;
+	}
+	.header_menu {
+		font-size : 30px;
+	}
+	.modal_title {
+		font-size : 30px;
+	}
+	.modal_footer_price {
+		font-size : 18px;
+	}
+}
+@media (max-width: 900px) {
+	.container {
+		max-width : 700px;
+	}
+	.promo_text {
+		padding-left : 4%;
+		flex-basis   : 50%;
+	}
+	.promo_text_title {
+		font-size   : 26px;
+		line-height : 30px;
+	}
+	.promo_text_description {
+		font-size   : 18px;
+		line-height : 22px;
+	}
+	.search-input {
+		flex-basis : 70%;
+	}
+	.search_header_text {
+		font-size   : 26px;
+		line-height : 30px;
+	}
+	.header_menu {
+		font-size : 26px;
+	}
+	.restaurant_description {
+		font-size : 18px;
+	}
+	.rating_menu {
+		font-size : 18px;
+	}
+	.menu_item_price {
+		margin-left : auto;
+	}
+}
+@media (max-width: 768px) {
+	.container {
+		max-width : 568px;
+	}
+	.promo {
+		background : #FFF1B8 url(../img/pizza.jpeg) no-repeat center right -200px / 500px;
+	}
+	.promo_text {
+		padding-left : 4%;
+		flex-basis   : 60%;
+	}
+	.promo_text_title {
+		font-size   : 22px;
+		line-height : 26px;
+	}
+	.promo_text_description {
+		font-size   : 18px;
+		line-height : 20px;
+	}
+	.search_header_text {
+		font-size   : 22px;
+		line-height : 26px;
+	}
+	.card {
+		flex-basis : 49%;
+	}
+	.price {
+		margin-left : auto;
+		order       : 2;
+	}
+	.category {
+		text-overflow : ellipsis;
+		order         : 3;
+	}
+	.rating {
+		margin : 0;
+	}
+	.rating_menu {
+		margin-right : 15px;
+	}
+	.footer_nav {
+		display   : flex;
+		flex-wrap : wrap;
+	}
+}
+@media (max-width: 578px) {
+	.container {
+		max-width : 90%;
+	}
+	.header {
+		display         : flex;
+		padding         : 40px 0;
+		justify-content : space-between;
+		align-items     : center;
+		flex-wrap       : wrap;
+	}
+	.adress-input {
+		margin-top : 20px;
+		order      : 4;
+		flex       : 1;
+	}
+	.promo {
+		height     : 200px;
+		background : #FFF1B8 url(../img/pizza.jpeg) no-repeat top -50px right -200px / 400px;
+	}
+	.promo_text {
+		padding-left : 6%;
+		flex-basis   : 70%;
+	}
+	.promo_text_title {
+		font-size   : 22px;
+		line-height : 26px;
+	}
+	.promo_text_description {
+		font-size   : 18px;
+		line-height : 20px;
+	}
+	.search_header_text {
+		font-size   : 22px;
+		line-height : 26px;
+	}
+	.footer_block {
+		padding         : 40px 0;
+		flex-wrap       : wrap;
+		justify-content : center;
+	}
+	.footer_logo_link {
+		margin-left : auto;
+		order       : 3;
+	}
+	.footer_logo {
+		margin-right : 0;
+	}
+	.footer_nav {
+		margin-right    : 0;
+		margin-bottom   : 20px;
+		font-size       : 14px;
+		flex-basis      : 100%;
+		justify-content : center;
+	}
+	.food_name {
+		font-size : 16px;
+	}
+	.food_price {
+		margin-right : auto;
+		font-size    : 18px;
+	}
+	.caunter {
+		font-size : 18px;
+	}
+	.modal_footer_price {
+		padding   : 10px 5px;
+		font-size : 16px;
+	}
+}
+@media (max-width: 550px) {
+	.card {
+		flex-basis : 100%;
+	}
+	.menu_item_price {
+		margin-left : 60px;
+	}
+	.food_row {
+		flex-wrap : wrap;
+	}
+}
+@media (max-width: 460px) {
+	.button_text {
+		display : none;
+	}
+	.buttons {
+		width           : 100px;
+		justify-content : space-around;
+	}
+	.button {
+		width : 40px;
+	}
+	.button:hover {
+		width : 40px;
+	}
+	.button_login {
+		background : url(../img/user.svg) center no-repeat #1890FF;
+	}
+	.button_login:hover {
+		background : url(../img/user.svg) center no-repeat #1670dd;
+	}
+	.button_cart {
+		background : url(../img/shopping-cart.svg) center no-repeat;
+	}
+	.button_cart:hover {
+		background : url(../img/shopping-cart.svg) center no-repeat #ddd;
+	}
+	.promo {
+		background      : #FFF1B8 url(../img/pizza.jpeg) no-repeat top -60px right -80px / 200px;
+		justify-content : center;
+	}
+	.promo_text {
+		padding-left : 0;
+		flex-basis   : 90%;
+	}
+	.search_restaurant_wrap {
+		height          : 120px;
+		flex-wrap       : wrap;
+		justify-content : center;
+	}
+	.search_header_text {
+		margin-top  : 20px;
+		line-height : 0;
+	}
+	.search-input {
+		margin-bottom : 20px;
+		line-height   : 0;
+		flex-basis    : 100%;
+	}
+	.button_cart_menu_item {
+		width : 110px;
+	}
+	.food_price {
+		margin-right : auto;
+		margin-left  : 15px;
+		order        : 3;
+	}
+	.modal_footer {
+		flex-wrap : wrap;
+	}
+	.modal_footer_buttons {
+		margin-left : 10px;
+	}
+}
+@media (max-width: 440px) {
+	.modal_footer_price {
+		margin : 0 auto 10px auto;
+	}
+	.modal_footer_buttons {
+		display         : flex;
+		width           : 100%;
+		justify-content : center;
+	}
+}
+@media (max-width: 400px) {
+	.food_price {
+		margin-left : auto;
+		order       : 0;
+	}
+	.food_caunter {
+		margin-top   : 10px;
+		margin-right : auto;
+		margin-left  : auto;
+	}
+	.modal_footer_buttons {
+		margin-right   : auto;
+		margin-left    : auto;
+		align-items    : center;
+		flex-direction : column;
+	}
+	.modal_dialog {
+		overflow : auto;
+		height   : 98%;
+	}
+	.modal_button_close {
+		margin-top  : 10px;
+		margin-left : 0;
+	}
+}
