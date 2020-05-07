@@ -20,7 +20,8 @@ const cartButton = document.querySelector("#cart-button"),
 	restaurantTitle = document.querySelector(".restaurant-title"),
 	minPrice = document.querySelector(".price"),
 	category = document.querySelector(".category"),
-	rating = document.querySelector(".rating");
+	rating = document.querySelector(".rating"),
+	inputSearch = document.querySelector(".input-search")
 
 let login = localStorage.getItem('nickname');
 
@@ -69,11 +70,80 @@ function authorized() {
 	buttonOut.style.display = 'block';
 
 	buttonOut.addEventListener("click", logOut);
+
+	//SEARCH
+	inputSearch.classList.remove("hide");
+	inputSearch.addEventListener('keydown', function(event) {
+
+		if (event.keyCode === 13) {
+			const target = event.target;
+			
+			const value = target.value.toLowerCase().trim();
+
+			target.value = '';
+
+			if (!value || value.length < 3) {
+				target.style.backgroundColor = 'pink';
+				setTimeout(function(){
+					target.style.backgroundColor = '';
+				}, 2000);
+				return;
+			}
+
+			const goods = [];
+			
+			getData('./db/partners.json')
+				.then(function(data) {
+					
+					const products = data.map(function(item){
+						return item.products;
+					});
+
+
+					products.forEach(function(product){
+						getData(`./db/${product}`)
+							.then(function(data){
+								
+								goods.push(...data);
+
+								const searchGoods = goods.filter(function(item) {
+									return item.name.toLowerCase().includes(value)
+								})
+
+								console.log(searchGoods);
+								
+								cardsMenu.textContent = '';
+
+								containerPromo.classList.add('hide');
+								restaurants.classList.add('hide');
+								menu.classList.remove('hide');
+
+								restaurantTitle.textContent = 'Результат поиска';
+								rating.textContent = '';
+								minPrice.textContent = '';
+								category.textContent = '';
+
+								return searchGoods;
+							})
+							.then(function(data){
+								data.forEach(createCardGood);
+							})
+					})
+					
+					
+				});
+
+			
+				
+		}
+		
+	});
 };
 function notAuthorized() {
 	logInForm.addEventListener("submit", logIn);
 	buttonAuth.addEventListener("click", toggleModalAuth);
 	closeAuth.addEventListener("click", toggleModalAuth);
+	inputSearch.classList.add("hide");
 
 	function logIn(event) {
 		event.preventDefault();
@@ -218,7 +288,7 @@ function init() {
 		autoplay: {
 			delay: 5000
 		},
-	})
+	});
 };
 
 init();
