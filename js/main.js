@@ -23,7 +23,7 @@ const cartButton = document.querySelector("#cart-button"),
 	rating = document.querySelector(".rating"),
 	inputSearch = document.querySelector(".input-search"),
 	modalBody = document.querySelector(".modal-body"),
-	modalPrice = document.querySelector(".modal-pricetag")
+	modalPrice = document.querySelector(".modal-pricetag");
 
 let login = localStorage.getItem('nickname');
 
